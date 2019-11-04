@@ -3,12 +3,15 @@ pragma solidity ^0.5.0;
 /*
                                   Insert Code Snippet 1 Here
 */
+import './Ilighthouse.sol';
 
 contract Gamble {
 
   /*
                                     Insert Code Snippet 2 Here
   */
+
+  ILighthouse public myLighthouse;
 
     address[20] public accounts;             // Array of users registered
     uint public numAccounts = 0;             // Should be <= 19, this holds number of registered users
@@ -20,6 +23,9 @@ contract Gamble {
   /*
                                     Insert Code Snippet 3 Here
   */
+  constructor (ILighthouse _myLighthouse) public {
+    myLighthouse = _myLighthouse;
+  }
 
 // Pass in sender address manually because truffle proxy contracts interfer with msg.sender
     function deposit(address msgSender) external payable {
@@ -48,7 +54,7 @@ contract Gamble {
       bool ok = false;
       bytes memory mem;
       (ok, mem) = msgSender.call.value(amount).gas(20000)("");    // fallback function logs withdraw in a storage write, requires 20000 gas
-      require(ok = true, "Transfer failed");
+      require(ok == true, "Transfer failed");
     }
 
 
@@ -91,6 +97,10 @@ contract Gamble {
   /*
                                     Insert Code Snippet 4 Here
   */
+  uint winningNumber;
+  bool ok;
+
+  (winningNumber, ok) = myLighthouse.peekData(); // obtain random number from Rhombus Lighthouse
 
       for(uint i = 0; i < numAccounts; i++){
         if( toBet[accounts[i]] != 0 && chosenNumber[accounts[i]] == winningNumber){
