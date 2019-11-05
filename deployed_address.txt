@@ -1,0 +1,131 @@
+truffle migrate  --network rinkeby
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 0x6acfc0
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        5390037
+   > block timestamp:     1572989674
+   > account:             0x88de7E4C2FcBC388D83C1F129804503dded5ADbd
+   > balance:             2.926925544
+   > gas used:            246393
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000492786 ETH
+
+   -------------------------------------
+   > Total cost:         0.000492786 ETH
+
+
+2_deploy_project.js
+===================
+
+   Deploying 'Lighthouse'
+   ----------------------
+   > block number:        5390039
+   > block timestamp:     1572989692
+   > account:             0x88de7E4C2FcBC388D83C1F129804503dded5ADbd
+   > balance:             2.925200788
+   > gas used:            835355
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00167071 ETH
+
+
+   Deploying 'Gamble'
+   ------------------
+   > block number:        5390040
+   > block timestamp:     1572989699
+   > account:             0x88de7E4C2FcBC388D83C1F129804503dded5ADbd
+   > balance:             2.92295851
+   > gas used:            1121139
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.002242278 ETH
+
+   -------------------------------------
+   > Total cost:         0.003912988 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.004405774 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 0x6acfc0
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xeeb60ef2209a5bd6b00ead05927a29a0e6b8b52c636a10138f618d041288ac44
+   > Blocks: 0            Seconds: 13
+   > contract address:    0x95300d2B080cb3f20f0c6b0479cBC25542cE4987
+   > block number:        5390041
+   > block timestamp:     1572989745
+   > account:             0x88de7E4C2FcBC388D83C1F129804503dded5ADbd
+   > balance:             2.87745249
+   > gas used:            261393
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00522786 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00522786 ETH
+
+
+2_deploy_project.js
+===================
+
+   Deploying 'Gamble'
+   ------------------
+   > transaction hash:    0x63f60bc789577c5f264183d885098d245b7922d9675f1c96b1120c13e7c2335f
+   > Blocks: 0            Seconds: 9
+   > contract address:    0xf3D5f7B0EA18f772A18681A1082824c380e442Aa
+   > block number:        5390043
+   > block timestamp:     1572989775
+   > account:             0x88de7E4C2FcBC388D83C1F129804503dded5ADbd
+   > balance:             2.85359053
+   > gas used:            1151075
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0230215 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0230215 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.02824936 ETH

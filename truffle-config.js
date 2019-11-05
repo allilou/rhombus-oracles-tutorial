@@ -1,8 +1,11 @@
 /*
                                   Insert Code Snippet 6 Here
 */
-var HDWalletProvider = require('truffle-hdwallet-provider');
-var mnemonic = ''; // the mnemonic for testnet Rinkeby
+var HDWalletProvider = require('@truffle/hdwallet-provider');
+
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+var infura = "https://rinkeby.infura.io/v3/ff6a5f66567945d987ad794f47b97472";
 
 const path = require("path");
 
@@ -17,10 +20,11 @@ module.exports = {
             network_id : '*' // Match any network id
         },
         rinkeby : {
-            privider : function () {
-                return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/[key]");
+            provider : function () {
+                return new HDWalletProvider(mnemonic, infura);
             },
-            network_id : 4
+            network_id : 4,
+            gas: 4500000
         }
     }
 };
